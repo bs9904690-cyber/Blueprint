@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BitGreb — Build Your Digital Income System</title>
+
+<style>
+
+/* =========================================================
+   BITGREB
+   DIGITAL SKILLS + MONEY-BUILDING SYSTEMS
+   CSS ONLY — NO JAVASCRIPT / NO IFRAME
+========================================================= */
+
+:root {
+    --red: #B71C1C;
+    --red-light: #E53935;
+    --cream: #FFF9C4;
+    --charcoal: #151515;
+    --charcoal-2: #202020;
+    --charcoal-3: #292929;
+    --white: #ffffff;
+    --muted: #aaa7a0;
+    --border: rgba(255,255,255,.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+    background: var(--charcoal);
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(183,28,28,.32),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255,249,196,.09),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(183,28,28,.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #101010,
+            #1b1616 45%,
+            #111111
+        );
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -4;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+    );
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+    position: relative;
+    z-index: 20;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 7%;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--cream);
+}
+
+.logo-dot {
+    color: var(--red-light);
+}
+
+.nav-button {
+    text-decoration: none;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    background: rgba(255,255,255,.04);
+
+    transition: .3s;
+}
+
+.nav-button:hover {
+    border-color: var(--red-light);
+
+    box-shadow:
+        0 0 20px rgba(183,28,28,.35);
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 90vh;
+
+    padding: 80px 7% 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 950px;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    padding: 9px 17px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(255,249,196,.15);
+
+    background: rgba(255,249,196,.045);
+
+    color: var(--cream);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 28px;
+
+    box-shadow:
+        0 0 30px rgba(255,249,196,.06);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.hero h1 {
+    font-size: clamp(54px, 9vw, 105px);
+
+    line-height: .94;
+
+    letter-spacing: -6px;
+
+    font-weight: 950;
+
+    margin-bottom: 30px;
+}
+
+.gradient-text {
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            var(--cream),
+            #ff8a80,
+            var(--red-light),
+            #ffffff
+        );
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientMove 7s linear infinite;
+}
+
+.hero-description {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #b8b5ae;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+}
+
+.hero-description strong {
+    color: var(--cream);
+}
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    margin-top: 40px;
+}
+
+.btn {
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 16px 26px;
+
+    border-radius: 14px;
+
+    font-weight: 800;
+
+    transition: .35s;
+}
+
+.btn-primary {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--red),
+            #8d1111
+        );
+
+    box-shadow:
+        0 0 25px rgba(183,28,28,.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 35px rgba(183,28,28,.6);
+}
+
+.btn-secondary {
+    color: var(--cream);
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid rgba(255,249,196,.15);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--cream);
+}
+
+/* =========================================================
+   FLOATING GLOW ELEMENTS
+========================================================= */
+
+.glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(5px);
+}
+
+.glow-one {
+    width: 120px;
+    height: 120px;
+
+    left: 5%;
+    top: 25%;
+
+    background: var(--red);
+
+    opacity: .16;
+
+    box-shadow:
+        0 0 100px 40px var(--red);
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+.glow-two {
+    width: 100px;
+    height: 100px;
+
+    right: 8%;
+    bottom: 15%;
+
+    background: var(--cream);
+
+    opacity: .08;
+
+    box-shadow:
+        0 0 100px 40px var(--cream);
+
+    animation:
+        floating 6s ease-in-out infinite reverse;
+}
+
+/* =========================================================
+   TRUST STRIP
+========================================================= */
+
+.trust-strip {
+    padding: 20px 0;
+
+    overflow: hidden;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(0,0,0,.18);
+}
+
+.trust-track {
+    width: max-content;
+
+    display: flex;
+
+    animation:
+        marquee 25s linear infinite;
+}
+
+.trust-item {
+    margin: 0 35px;
+
+    color: #817e77;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+    padding: 110px 7%;
+}
+
+.section-heading {
+    max-width: 750px;
+
+    text-align: center;
+
+    margin: 0 auto 60px;
+}
+
+.section-heading .small {
+    color: var(--red-light);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: clamp(38px, 6vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 20px;
+}
+
+.section-heading p {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   PROBLEM SECTION
+========================================================= */
+
+.problem-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.problem-card {
+    padding: 30px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid var(--border);
+
+    transition: .4s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.problem-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -50px;
+    top: -50px;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    filter: blur(35px);
+
+    opacity: .25;
+}
+
+.problem-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(183,28,28,.5);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.25);
+}
+
+.icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    margin-bottom: 24px;
+
+    font-size: 25px;
+
+    color: var(--cream);
+
+    background:
+        rgba(183,28,28,.14);
+
+    border:
+        1px solid rgba(183,28,28,.3);
+
+    box-shadow:
+        0 0 30px rgba(183,28,28,.18);
+}
+
+.problem-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.problem-card p {
+    color: #96938c;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   SYSTEM SECTION
+========================================================= */
+
+.system {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+}
+
+.system-card {
+    padding: 40px;
+
+    min-height: 300px;
+
+    border-radius: 28px;
+
+    border: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(183,28,28,.22),
+            transparent 35%
+        ),
+        rgba(255,255,255,.035);
+
+    transition: .4s;
+}
+
+.system-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.3);
+}
+
+.number {
+    font-size: 13px;
+
+    color: var(--red-light);
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.system-card h3 {
+    font-size: 31px;
+
+    margin-bottom: 15px;
+}
+
+.system-card p {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+.system-flow {
+    max-width: 1100px;
+
+    margin: 45px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.flow-item {
+    padding: 12px 17px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border: 1px solid var(--border);
+
+    color: var(--cream);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.arrow {
+    color: var(--red-light);
+
+    font-weight: 900;
+}
+
+/* =========================================================
+   BLUEPRINT
+========================================================= */
+
+.blueprint {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 55px;
+
+    border-radius: 32px;
+
+    border: 1px solid rgba(255,249,196,.13);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(183,28,28,.15),
+            rgba(255,255,255,.035)
+        );
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.3);
+}
+
+.blueprint-top {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 45px;
+}
+
+.blueprint-label {
+    color: var(--cream);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.blueprint h3 {
+    font-size: clamp(32px, 5vw, 52px);
+
+    letter-spacing: -2px;
+}
+
+.blueprint-intro {
+    color: #a7a39b;
+
+    line-height: 1.7;
+
+    max-width: 500px;
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.step {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0,0,0,.22);
+
+    border: 1px solid var(--border);
+
+    transition: .3s;
+}
+
+.step:hover {
+    border-color:
+        rgba(183,28,28,.45);
+
+    transform: translateY(-4px);
+}
+
+.step-number {
+    color: var(--red-light);
+
+    font-weight: 900;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+.step h4 {
+    font-size: 18px;
+
+    margin-bottom: 9px;
+}
+
+.step p {
+    color: #918e87;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+/* =========================================================
+   COUNTDOWN MARKETING SECTION
+========================================================= */
+
+.countdown-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 60px 35px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(183,28,28,.25);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(183,28,28,.25),
+            transparent 50%
+        ),
+        rgba(255,255,255,.025);
+}
+
+.countdown-section h3 {
+    font-size: clamp(30px, 5vw, 48px);
+
+    margin-bottom: 14px;
+}
+
+.countdown-section p {
+    color: #a29e97;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 35px 0;
+
+    flex-wrap: wrap;
+}
+
+.time-box {
+    min-width: 90px;
+
+    padding: 18px 14px;
+
+    border-radius: 17px;
+
+    background: #171717;
+
+    border: 1px solid rgba(255,249,196,.12);
+
+    box-shadow:
+        0 0 25px rgba(183,28,28,.13);
+}
+
+.time-number {
+    display: block;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    color: var(--cream);
+}
+
+.time-label {
+    color: #77746e;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.urgency {
+    color: #ff8a80;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+/* =========================================================
+   MARKETING STRATEGY
+========================================================= */
+
+.strategy {
+    max-width: 1000px;
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.strategy-card {
+    padding: 22px 16px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(0,0,0,.22);
+
+    border: 1px solid var(--border);
+}
+
+.strategy-card strong {
+    display: block;
+
+    color: var(--cream);
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.strategy-card span {
+    color: #85827b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.final-cta {
+    padding: 120px 7%;
+
+    text-align: center;
+}
+
+.cta-box {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 80px 30px;
+
+    border-radius: 35px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(183,28,28,.35),
+            transparent 50%
+        ),
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(255,255,255,.11);
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.35);
+}
+
+.cta-box h2 {
+    font-size: clamp(40px, 7vw, 72px);
+
+    letter-spacing: -4px;
+
+    margin-bottom: 20px;
+}
+
+.cta-box p {
+    color: #9b978f;
+
+    max-width: 620px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 35px 7%;
+
+    border-top:
+        1px solid var(--border);
+
+    text-align: center;
+
+    color: #66635e;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 300% center;
+    }
+}
+
+@keyframes marquee {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .problem-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .system {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .strategy {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .blueprint-top {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .hero {
+        padding:
+            60px 5%
+            90px;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .section {
+        padding:
+            75px 5%;
+    }
+
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .strategy {
+        grid-template-columns: 1fr;
+    }
+
+    .blueprint {
+        padding: 30px 20px;
+    }
+
+    .countdown-section {
+        padding: 45px 20px;
+    }
+
+    .time-box {
+        min-width: 72px;
+    }
+
+    .time-number {
+        font-size: 25px;
+    }
+
+    .cta-box {
+        padding:
+            60px 22px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        bitgreb<span class="logo-dot">.</span>
+    </div>
+
+    <a href="#blueprint" class="nav-button">
+        Free Blueprint →
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            ✦ DIGITAL SKILLS × ONLINE INCOME
+        </div>
+
+        <h1>
+            Learn skills.<br>
+            <span class="gradient-text">
+                Build your system.
+            </span>
+        </h1>
+
+        <p class="hero-description">
+
+            BitGreb helps beginners understand the skills,
+            tools and systems behind legitimate online income —
+            <strong>without hype, shortcuts or unrealistic promises.</strong>
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#blueprint"
+                class="btn btn-primary"
+            >
+                Get the Free Blueprint →
+            </a>
+
+            <a
+                href="#system"
+                class="btn btn-secondary"
+            >
+                Explore the System
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MOVING STRIP
+====================================================== -->
+
+<div class="trust-strip">
+
+    <div class="trust-track">
+
+        <div class="trust-item">DIGITAL SKILLS</div>
+        <div class="trust-item">AI TOOLS</div>
+        <div class="trust-item">FREELANCING</div>
+        <div class="trust-item">CONTENT</div>
+        <div class="trust-item">AUDIENCE</div>
+        <div class="trust-item">OFFERS</div>
+        <div class="trust-item">SYSTEMS</div>
+        <div class="trust-item">DIGITAL PRODUCTS</div>
+
+        <div class="trust-item">DIGITAL SKILLS</div>
+        <div class="trust-item">AI TOOLS</div>
+        <div class="trust-item">FREELANCING</div>
+        <div class="trust-item">CONTENT</div>
+        <div class="trust-item">AUDIENCE</div>
+        <div class="trust-item">OFFERS</div>
+        <div class="trust-item">SYSTEMS</div>
+        <div class="trust-item">DIGITAL PRODUCTS</div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROBLEM
+====================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div class="small">
+            THE BEGINNER PROBLEM
+        </div>
+
+        <h2>
+            Stop jumping<br>
+            from trend to trend.
+        </h2>
+
+        <p>
+            The internet gives beginners thousands of ways
+            to make money. The difficult part is knowing what
+            to learn, what to build and what to ignore.
+        </p>
+
+    </div>
+
+
+    <div class="problem-grid">
+
+        <div class="problem-card">
+
+            <div class="icon">◈</div>
+
+            <h3>
+                Too much information
+            </h3>
+
+            <p>
+                Tutorials, tools and strategies are everywhere,
+                but information without direction can create
+                more confusion.
+            </p>
+
+        </div>
+
+
+        <div class="problem-card">
+
+            <div class="icon">⌁</div>
+
+            <h3>
+                Constantly switching
+            </h3>
+
+            <p>
+                New trends appear every day. Building a useful
+                skill usually requires consistent practice,
+                not constant switching.
+            </p>
+
+        </div>
+
+
+        <div class="problem-card">
+
+            <div class="icon">✦</div>
+
+            <h3>
+                No clear system
+            </h3>
+
+            <p>
+                A skill becomes more useful when you can connect
+                it to an offer, an audience and a repeatable
+                process.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SYSTEM
+====================================================== -->
+
+<section class="section" id="system">
+
+    <div class="section-heading">
+
+        <div class="small">
+            THE BITGREB FRAMEWORK
+        </div>
+
+        <h2>
+            Build an online<br>
+            income system.
+        </h2>
+
+        <p>
+            Instead of chasing a single "money-making trick",
+            learn how different digital skills can connect
+            into a practical system.
+        </p>
+
+    </div>
+
+
+    <div class="system">
+
+        <div class="system-card">
+
+            <div class="number">
+                01 — LEARN
+            </div>
+
+            <h3>
+                Develop a useful skill.
+            </h3>
+
+            <p>
+                Start with skills that can create measurable
+                value for someone else — writing, design,
+                research, editing, AI-assisted workflows,
+                marketing or another useful digital skill.
+            </p>
+
+        </div>
+
+
+        <div class="system-card">
+
+            <div class="number">
+                02 — BUILD
+            </div>
+
+            <h3>
+                Create proof of ability.
+            </h3>
+
+            <p>
+                Build sample projects, simple case studies,
+                content or small digital assets that demonstrate
+                what you can actually do.
+            </p>
+
+        </div>
+
+
+        <div class="system-card">
+
+            <div class="number">
+                03 — PUBLISH
+            </div>
+
+            <h3>
+                Put your work where people can find it.
+            </h3>
+
+            <p>
+                Use platforms such as social media, communities,
+                marketplaces or your own website to distribute
+                useful content and demonstrate your skills.
+            </p>
+
+        </div>
+
+
+        <div class="system-card">
+
+            <div class="number">
+                04 — CONNECT
+            </div>
+
+            <h3>
+                Turn attention into opportunities.
+            </h3>
+
+            <p>
+                Build relationships, communicate clearly,
+                make relevant offers and improve your process
+                using feedback.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="system-flow">
+
+        <span class="flow-item">Skill</span>
+
+        <span class="arrow">→</span>
+
+        <span class="flow-item">Sample</span>
+
+        <span class="arrow">→</span>
+
+        <span class="flow-item">Content</span>
+
+        <span class="arrow">→</span>
+
+        <span class="flow-item">Audience</span>
+
+        <span class="arrow">→</span>
+
+        <span class="flow-item">Offer</span>
+
+        <span class="arrow">→</span>
+
+        <span class="flow-item">Feedback</span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FREE BLUEPRINT
+====================================================== -->
+
+<section class="section" id="blueprint">
+
+    <div class="section-heading">
+
+        <div class="small">
+            FREE BEGINNER RESOURCE
+        </div>
+
+        <h2>
+            The Beginner<br>
+            Money-Building Blueprint.
+        </h2>
+
+        <p>
+            A simple starting framework for turning a digital
+            skill into a practical online income system.
+        </p>
+
+    </div>
+
+
+    <div class="blueprint">
+
+        <div class="blueprint-top">
+
+            <div>
+
+                <div class="blueprint-label">
+                    BITGREB BLUEPRINT / 01
+                </div>
+
+                <h3>
+                    From zero → first opportunity.
+                </h3>
+
+            </div>
+
+            <p class="blueprint-intro">
+                This isn't a promise of instant income.
+                It's a framework for learning a useful skill,
+                creating proof, finding people who need it
+                and improving through real feedback.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    WEEK 01
+                </div>
+
+                <h4>
+                    Choose one skill
+                </h4>
+
+                <p>
+                    Pick one practical digital skill and
+                    spend the week learning the fundamentals.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    WEEK 02
+                </div>
+
+                <h4>
+                    Build samples
+                </h4>
+
+                <p>
+                    Create 3–5 sample projects that demonstrate
+                    the type of result you can provide.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    WEEK 03
+                </div>
+
+                <h4>
+                    Create your presence
+                </h4>
+
+                <p>
+                    Build a simple portfolio or profile and
+                    publish useful content related to your skill.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    WEEK 04
+                </div>
+
+                <h4>
+                    Find opportunities
+                </h4>
+
+                <p>
+                    Research relevant businesses, creators or
+                    clients and make personalized, useful offers.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    WEEK 05
+                </div>
+
+                <h4>
+                    Deliver & learn
+                </h4>
+
+                <p>
+                    Complete work professionally, collect feedback
+                    and identify what should be improved.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    WEEK 06+
+                </div>
+
+                <h4>
+                    Build the system
+                </h4>
+
+                <p>
+                    Improve your offer, content, audience and
+                    workflow instead of constantly starting over.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COUNTDOWN MARKETING
+====================================================== -->
+
+<section class="section">
+
+    <div class="countdown-section">
+
+        <div class="blueprint-label">
+            LIMITED CAMPAIGN
+        </div>
+
+        <h3>
+            Start your blueprint challenge.
+        </h3>
+
+        <p>
+            Use a short campaign window to create urgency around
+            the free resource — without making false claims about
+            availability or income.
+        </p>
+
+
+        <!-- CSS VISUAL COUNTDOWN -->
+
+        <div class="countdown">
+
+            <div class="time-box">
+
+                <span class="time-number">
+                    03
+                </span>
+
+                <span class="time-label">
+                    Days
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span class="time-number">
+                    12
+                </span>
+
+                <span class="time-label">
+                    Hours
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span class="time-number">
+                    48
+                </span>
+
+                <span class="time-label">
+                    Minutes
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span class="time-number">
+                    20
+                </span>
+
+                <span class="time-label">
+                    Seconds
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="urgency">
+            ✦ Campaign example — replace with your real deadline.
+        </div>
+
+
+        <a
+            href="#download"
+            class="btn btn-primary"
+        >
+            Get the Free Blueprint →
+        </a>
+
+
+        <!-- MARKETING STRATEGY -->
+
+        <div class="strategy">
+
+            <div class="strategy-card">
+
+                <strong>
+                    DAY 1
+                </strong>
+
+                <span>
+                    Introduce the problem and reveal the free
+                    blueprint.
+                </span>
+
+            </div>
+
+
+            <div class="strategy-card">
+
+                <strong>
+                    DAY 2
+                </strong>
+
+                <span>
+                    Share one useful lesson from the blueprint
+                    and demonstrate its value.
+                </span>
+
+            </div>
+
+
+            <div class="strategy-card">
+
+                <strong>
+                    DAY 3
+                </strong>
+
+                <span>
+                    Show the process, answer beginner questions
+                    and remind people about the campaign.
+                </span>
+
+            </div>
+
+
+            <div class="strategy-card">
+
+                <strong>
+                    FINAL DAY
+                </strong>
+
+                <span>
+                    Give a clear deadline reminder and direct
+                    interested users to the resource.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+====================================================== -->
+
+<section class="final-cta" id="download">
+
+    <div class="cta-box">
+
+        <h2>
+            Don't chase every<br>
+            <span class="gradient-text">
+                new opportunity.
+            </span>
+        </h2>
+
+        <p>
+            Learn a skill. Build proof. Create value.
+            Find people who need it. Improve the system.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#blueprint"
+                class="btn btn-primary"
+            >
+                Get the Beginner Blueprint →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    © 2026 BitGreb · Learn skills. Build the system.
+    Create your first legitimate online income stream.
+
+</footer>
+
+
+</body>
+  </html>
